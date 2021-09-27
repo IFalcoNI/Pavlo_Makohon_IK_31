@@ -32,3 +32,5 @@ git checkout new_branch
 ```sh
 git pull
 ```
+### 10. Добавив картинку в README.md :
+![alt text](https://github.com/IFalcoNI/Pavlo_Makohon_IK_31/blob/master/LAB_1/JS.png "Added image") 
