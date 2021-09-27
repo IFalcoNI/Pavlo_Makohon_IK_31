@@ -3,3 +3,9 @@
 ```sh
 git clone https://github.com/IFalcoNI/Pavlo_Makohon_IK_31.git
 ```
+### 2. Коміт до репозиторію:
+
+### 3. Визначив хеш попереднього коміту `b6df4ac4ffc53077584c84c3fd70e663b41e52bd` за допопомогою команди:
+```sh
+git log
+``` 
