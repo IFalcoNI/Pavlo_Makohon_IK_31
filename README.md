@@ -9,11 +9,16 @@ git clone https://github.com/IFalcoNI/Pavlo_Makohon_IK_31.git
 ```sh
 git log
 ``` 
+
 ### 4. Створив нову гілку командою:
 ```sh
 git branch new_branch
 ```
+
 ### Переключився на новостворену гілку командою:
 ```sh
 git checkout new_branch
 ``` 
+
+### 5. Через зміну гілки на new_branch, зміни на гілці master не відобразилися.
+
