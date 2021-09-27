@@ -9,3 +9,4 @@ git clone https://github.com/IFalcoNI/Pavlo_Makohon_IK_31.git
 ```sh
 git log
 ``` 
+### 5. Через зміну гілки на new_branch, зміни на гілці master не відобразилися.
