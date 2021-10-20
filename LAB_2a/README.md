@@ -16,22 +16,24 @@ print("2nd const: ", False)
 print("3rd const: ", NotImplemented)
 ```
 
-1. Вивід за допомогою вбудованих функцій:
-   ```python
-    print("35 in hex system: ", hex(35))
-   print("2 to the power of 4: ", pow(2,4))
-   print("Finding max number of 4,2,1,6,3 :",max(4,2,1,6,3))
-   ```
-1. Вивід результатів роботи циклу та розгалуження
+2. Вивід за допомогою вбудованих функцій:
 
-   ```python
-   x= [1 for i in range(10)]
-   print(x)
-   a=7
-   print("A equals 7" if a == 7 else "A not equals 7")
-   ```
+```python
+print("35 in hex system: ", hex(35))
+print("2 to the power of 4: ", pow(2,4))
+print("Finding max number of 4,2,1,6,3 :",max(4,2,1,6,3))
+```
 
-1. Вивід результату роботи `try`->`except`->`finally`:
+3. Вивід результатів роботи циклу та розгалуження
+
+```python
+x= [1 for i in range(10)]
+print(x)
+a=7
+print("A equals 7" if a == 7 else "A not equals 7")
+```
+
+4. Вивід результату роботи `try`->`except`->`finally`:
 
 ```python
 y=[3,8]
@@ -44,17 +46,30 @@ finally:
     print("We got it finnaly")
 ```
 
-1. Вивід результату роботи контекст-менеджера `with`:
-   ```python
-   i=1
-   with open("README.md", "r") as file:
-    for line in file:
-        print("Row " + str(i) + ": " + line)
-        i=i+1
-   ```
-1. Вивід результату роботи з `lambdas`:
-   ```python
-   new_lambda = lambda first_number, second_number: f'Sum= {first_number + second_number}'
-   print("Lambda`s location in memmory: ", new_lambda)
-   print("Call lambda: ", new_lambda(5, 6))
-   ```
+5. Вивід результату роботи контекст-менеджера `with`:
+
+```python
+i=1
+with open("README.md", "r") as file:
+for line in file:
+    print("Row " + str(i) + ": " + line)
+    i=i+1
+```
+
+6. Вивід результату роботи з `lambdas`:
+
+```python
+new_lambda = lambda first_number, second_number: f'Sum= {first_number + second_number}'
+print("Lambda`s location in memmory: ", new_lambda)
+print("Call lambda: ", new_lambda(5, 6))
+```
+
+#### 3. Створив такі файли:
+
+```text
+LAB_2a/
+├── modules/
+│   └── common.py
+├── __init__.py
+└── __main__.py
+```
