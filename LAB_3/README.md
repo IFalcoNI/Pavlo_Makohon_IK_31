@@ -159,3 +159,60 @@ Quit the server with CONTROL-C.
 [06/Nov/2021 20:36:38] "GET /health/ HTTP/1.1" 200 90
 
 ```
+
+#### 11. Роль моніторингу буде здійснювати файл `monitoring.py` який за допомогою бібліотеки `requests` буде опитувати сторінку `health`. Встановлюємо дану бібліотеку;
+     ```bash
+     pipenv install requests
+     ```
+     
+#### 12. Як видно із заготовленої функції health() відповідь формується як Пайтон словник і далі обробляється функцією JsonResponse(). 
+
+#### 13. Здача/захист лабораторної:
+     1. модифікувати функцію `health` так щоб у відповіді були: згенерована на сервері дата, URL сторінки моніторингу, інформація про сервер на якому запущений сайт та інформація про клієнта який робить запит до сервера;
+    ```bash
+    def health(request):
+    osInfo = os.uname()
+    response = {
+    'date': datetime.now().strftime("%d.%m.%y %H:%M"),
+    'current_page': request.get_host() + request.get_full_path(),
+    'server_info': f"OSName: {osInfo.sysname}; NodeName: {osInfo.nodename}; Release:{osInfo.release}; Version:{osInfo.version}; Indentificator:{osInfo.machine}",
+    'client_info': f"Browser: {request.META['HTTP_USER_AGENT']}  IP: {request.META['REMOTE_ADDR']} "
+    }
+    return JsonResponse(response)
+    ```
+     2. дописати функціонал який буде виводити повідомлення про недоступність сайту у випадку якщо WEB сторінка недоступна 
+    ```bash
+    try:
+        request = requests.get(url)
+        data = json.loads(request.content)
+        logging.info("Server not responding. Time on server: %s", data['date'])
+        logging.info("Requested page : %s", data['current_page'])
+        logging.info("Server respond:")
+        for key in data.keys():
+            logging.info("Key: %s, Data: %s", key, data[key])
+    except Exception as x:
+        logging.error("Server is unavailable.")
+
+    ``` 
+     3. після запуску моніторингу запит йде лише один раз після чого програма закінчується - зробіть так щоб дана програма запускалась раз в хвилину та працювала в бекграунді (період запуску зробити через функціонал мови Python);
+    ```bash
+     while(True):
+        main("http://localhost:8000/health")
+        time.sleep(60)
+     ``` 
+       Для запуску в беграунді викликаємо файл так
+    ```bash
+     pipenv run python3 monitoring.py &
+     ``` 
+     4. спростіть роботу з пайтон середовищем через швидкий виклик довгих команд, для цього зверніть увагу на секцію `scripts` у Pipfile. Зробіть аліас на запус моніторингу:
+         ```bash
+         pipenv run mn
+         ```
+        ```bash
+        [scripts]
+        server = "python manage.py runserver 0.0.0.0:8000"
+        mon = "python3 monitoring.py"
+        ```
+#### 14.Переконуємося що все працює, комітимо `server.logs` . 
+
+#### 15.Після успішного виконання роботи редагуємо  README.md у цьому репозиторію.

@@ -9,5 +9,11 @@ def main(request):
 
 
 def health(request):
-    response = {'date': 'test1', 'current_page': "test2", 'server_info': "test3", 'client_info': "test4"}
+    osInfo = os.uname()
+    response = {
+        'date': datetime.now().strftime("%d.%m.%y %H:%M"),
+        'current_page': request.get_host() + request.get_full_path(),
+        'server_info': f"OSName: {osInfo.sysname}; NodeName: {osInfo.nodename}; Release:{osInfo.release}; Version:{osInfo.version}; Indentificator:{osInfo.machine}",
+        'client_info': f"Browser: {request.META['HTTP_USER_AGENT']}  IP: {request.META['REMOTE_ADDR']} "
+    }
     return JsonResponse(response)

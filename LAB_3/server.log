@@ -1,0 +1,12 @@
+ERROR 2021-11-06 22:57:36,286 root : Server is unavailable.
+ERROR 2021-11-06 22:58:36,299 root : Server is unavailable.
+ERROR 2021-11-06 22:59:36,313 root : Server is unavailable.
+ERROR 2021-11-06 23:00:36,325 root : Server is unavailable.
+ERROR 2021-11-06 23:01:36,333 root : Server is unavailable.
+INFO 2021-11-06 23:02:36,353 root : Server not responding. Time on server: 06.11.21 21:02
+INFO 2021-11-06 23:02:36,353 root : Requested page : localhost:8000/health/
+INFO 2021-11-06 23:02:36,353 root : Server respond:
+INFO 2021-11-06 23:02:36,353 root : Key: date, Data: 06.11.21 21:02
+INFO 2021-11-06 23:02:36,353 root : Key: current_page, Data: localhost:8000/health/
+INFO 2021-11-06 23:02:36,353 root : Key: server_info, Data: OSName: Darwin; NodeName: Makohons-MBP; Release:21.1.0; Version:Darwin Kernel Version 21.1.0: Wed Oct 13 17:33:23 PDT 2021; root:xnu-8019.41.5~1/RELEASE_X86_64; Indentificator:x86_64
+INFO 2021-11-06 23:02:36,353 root : Key: client_info, Data: Browser: python-requests/2.26.0  IP: 127.0.0.1 
