@@ -99,9 +99,9 @@ docker/whalesay          latest     6b362a9f73eb   6 years ago      247MB
 ```
 Команда для завантаження на власний репозеторій `docker push makohon/lab4:django`.
 Посилання на мій [`Docker Hub`](https://hub.docker.com/repository/docker/makohon/lab4) репозиторій та посилання на [`images`](https://hub.docker.com/layers/177287597/makohon/lab4/django/images/sha256-a8401f471dc7a131227686f1288d44066d7a41ebea2975bbda9409aa960e04cc?context=repo).
-#### 7. Для запуску веб-сайту виконав команду `sudo docker run -it --name=django --rm -p 8080:8080 makohon/lab4:django`:
+#### 7. Для запуску веб-сайту виконав команду `sudo docker run -it --name=django --rm -p 8000:8000 makohon/lab4:django`:
 ```text
-falcon@Makohons-MBP LAB_4 % sudo docker run -it --name=django --rm -p 8080:8080 makohon/lab4:django
+falcon@Makohons-MBP LAB_4 % sudo docker run -it --name=django --rm -p 8000:8000 makohon/lab4:django
 Warning: Your Pipfile requires python_version 3.10, but you are using 3.8.12 (/root/.local/share/v/a/bin/python).
   $ pipenv --rm and rebuilding the virtual environment may resolve the issue.
   $ pipenv check will surely fail.
@@ -111,13 +111,13 @@ System check identified no issues (0 silenced).
 Run 'python manage.py migrate' to apply them.
 November 14, 2021 - 20:44:36
 Django version 3.2.9, using settings 'my_site.settings'
-Starting development server at http://0.0.0.0:8080/
+Starting development server at http://0.0.0.0:8000/
 Quit the server with CONTROL-C.
 [14/Nov/2021 20:44:59] "GET /favicon.ico HTTP/1.1" 400 60479
 [14/Nov/2021 20:45:12] "GET / HTTP/1.1" 200 315
 
 ```
-Перейшов на адресу http://localhost:8080 та переконався що мій веб-сайт працює:
+Перейшов на адресу http://localhost:8000 та переконався що мій веб-сайт працює:
 #### 8. Оскільки веб-сайт готовий і працює, потрібно створит ще один контейнер із програмою моніторингу нашого веб-сайту (Моє Завдання на роботу):
 1. ##### Створив ще один Dockerfile з назвою `Dockerfile.site` в якому помістив програму моніторингу.
     Вміст файлу `Dockerfile.site`:
@@ -146,11 +146,11 @@ Quit the server with CONTROL-C.
     # Інсталюємо всі залежності
     RUN pipenv install
     
-    # Відкриваємо порт 8080 на зовні
-    EXPOSE 8080
+    # Відкриваємо порт 8000 на зовні
+    EXPOSE 8000
 
     # Це команда яка виконається при створенні контейнера
-    ENTRYPOINT ["pipenv", "run", "python", "monitoring.py", "0.0.0.0:8080"]
+    ENTRYPOINT ["pipenv", "run", "python", "monitoring.py", "0.0.0.0:8000"]
     ```
 2. ##### Виконав білд даного імеджа та дав йому тег `monitoring` командами:
     ```text
