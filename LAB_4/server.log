@@ -1,0 +1,14 @@
+INFO 2021-11-14 21:01:09,288 root : Server not responding. Time on server: 14.11.21 21:01
+INFO 2021-11-14 21:01:09,290 root : Requested page : localhost:8000/health/
+INFO 2021-11-14 21:01:09,291 root : Server respond:
+INFO 2021-11-14 21:01:09,291 root : Key: date, Data: 14.11.21 21:01
+INFO 2021-11-14 21:01:09,293 root : Key: current_page, Data: localhost:8000/health/
+INFO 2021-11-14 21:01:09,293 root : Key: server_info, Data: OSName: Linux; NodeName: 0edd856c01d8; Release:4.19.121-linuxkit; Version:#1 SMP Thu Jan 21 15:36:34 UTC 2021; Indentificator:x86_64
+INFO 2021-11-14 21:01:09,294 root : Key: client_info, Data: Browser: python-requests/2.26.0  IP: 172.17.0.1 
+INFO 2021-11-14 21:02:09,415 root : Server not responding. Time on server: 14.11.21 21:02
+INFO 2021-11-14 21:02:09,417 root : Requested page : localhost:8000/health/
+INFO 2021-11-14 21:02:09,419 root : Server respond:
+INFO 2021-11-14 21:02:09,420 root : Key: date, Data: 14.11.21 21:02
+INFO 2021-11-14 21:02:09,421 root : Key: current_page, Data: localhost:8000/health/
+INFO 2021-11-14 21:02:09,422 root : Key: server_info, Data: OSName: Linux; NodeName: 0edd856c01d8; Release:4.19.121-linuxkit; Version:#1 SMP Thu Jan 21 15:36:34 UTC 2021; Indentificator:x86_64
+INFO 2021-11-14 21:02:09,423 root : Key: client_info, Data: Browser: python-requests/2.26.0  IP: 172.17.0.1 
