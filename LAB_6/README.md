@@ -8,7 +8,7 @@
 
 #### 2. -
 
-#### 3. Інтеграція пройшла успішно тому на dashboard `Travis` відображаються мої `GitHub` репозиторії. Додав репозиторій до `Travis`.
+#### 3. Інтеграція пройшла успішно, тому на dashboard `Travis` відображаються мої `GitHub` репозиторії. Додав репозиторій до `Travis`.
 
 ![t_3](https://github.com/IFalcoNI/Pavlo_Makohon_IK_31/blob/master/LAB_6/pictures/img1.png)
 
