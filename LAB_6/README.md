@@ -63,6 +63,7 @@ branches:
 ```
 Створюю в папці з лабораторною 3 файл `LAB_3/scripts/travis-build.sh` і надаю йому права для запуску командою `chmod 777 ./scripts/travis-build.sh` знаходячись в папці `LAB_3`.
 Вміст файла `./scripts/travis-build.sh`:
+
 ```sh
 #!/bin/bash
 set -ev
@@ -70,4 +71,3 @@ nohup pipenv run server > ./ci-build.log &
 pipenv run python monitoring.py || true
 exit 0
 ```
-
