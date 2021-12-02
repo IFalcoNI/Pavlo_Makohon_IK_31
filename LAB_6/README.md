@@ -154,6 +154,6 @@ exit 0
 ```
 
 Запуск білда в `Travis-CI`:
-![T_6](https://github.com/makohon/Pavlo_Vulchak_IK_31/blob/master/Lab6/pictures/img3.png)
+![T_6](https://github.com/makohon/Pavlo_Makohon_IK_31/blob/master/LAB_6/pictures/img3.png)
 
 #### 7. Після успішного виконання роботи відредагував свій персональний README.md у цьому репозиторію та створив pull request.
